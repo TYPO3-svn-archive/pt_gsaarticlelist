@@ -1,0 +1,67 @@
+********************************************************************************
+DevDoc.txt: Development notes for EXT pt_gsaarticlelist
+Author: Fabrizio Branca, Rainer Kuhn et. al.
+--------------------------------------------------------------------------------
+
+Legend:
+FIX: fixed a bug
+CHG: changed items/features
+ADD: added feature
+RMV: removed item
+RFT: refactoring / code cleanup
+TODO: todo
+********************************************************************************
+
+
+ToDo: As of 11.12.09
+====================
+
+- TODO: use pt_list for GSA article lists
+
+
+
+
+********************************************************************************
+CHANGELOG
+********************************************************************************
+
+v0.0.4dev:
+=========
++ (rk) RFT: cleaned up DevDoc.txt
+
+
+
+
+v0.0.3: [TER]
+======
++ (rk) FIX: pi1/static/constants.txt, setup.txt: fixed spelling mistake in TS constants syntax, changed "tx_ptgsarticlelist_pi1" to "tx_ptgsaarticlelist_pi1"
+            *** IMPORTANT: this may require adaptions of the TS of your existing installation! ***
+             adapted extension manual
+
+
+v0.0.2: [TER]
+======
++ (rk) FIX: tx_ptgsaarticlelist_defaultDataProvider::getArticleCollectionForPage(): Bugfix Artikelbilder-Anzeige
++ (wz) Instanziierung von smartyAdapter nur noch mit $this, so dass locallang-labels direkt im template gehen
++ (fb)
+  + res/locallang.xml gelöscht. Das label kommt jetzt über die setup.txt zur Articlelist
+  + plugin.tx_ptgsaarticlelist_pi1.defaultDataProvider.searchString (string/stdWrap) hinzugefügt
+  + plugin.tx_ptgsaarticlelist_pi1.defaultDataProvider.andWhere (string/stdWrap) hinzugefügt
++ (fb)
+  + display_* durch articleDisplay_* ersetzt
++ (fb)
+  + Manual hinzugefügt
+  + display_* kommen jetzt aus pt_gsashop constants
+  + constants ergänzt
+  + flexform 
+    + ergänzt um die beiden templates (pager, articlelist)
+    + feld für articlesbox template rausgeschmissen (wurde hier nicht gebraucht)
++ (fb)  
+  + display_orderbutton Option hinzugefügt
++ (fb)
+  + stdWrap für Headline
+    + static typoscript: headline_stdWrap.wrap = <h2 id="tx_ptgsaarticlelist_pi1_headline">|</h2>
+  + stdWrap für pager
+    + static typoscript: pager_stdWrap.wrap = <div class="tx_ptgsaarticlelist_pi1_pager">|</div>
+  + typolink für pager links (um z.B. Anker hinzuzufügen)
+  + addToLinkVars wieder rausgenommen (erfolgt jetzt immer DataProvider Objekt).

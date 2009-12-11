@@ -1,0 +1,116 @@
+################################################################################
+## general configuration
+################################################################################
+plugin.tx_ptgsaarticlelist_pi1 {
+
+    # --------------------------------------------------------------------------
+    # From pt_gsashop constants ------------------------------------------------ 
+    # --------------------------------------------------------------------------
+    shoppingcartPage = {$plugin.tx_ptgsashop.shoppingcartPage}
+    
+    enableArticleRelations = {$plugin.tx_ptgsashop.enableArticleRelations}
+    currencyCode = {$plugin.tx_ptgsashop.currencyCode}
+    md5SecurityCheckSalt = {$plugin.tx_ptgsashop.md5SecurityCheckSalt}
+    
+    imgAddToCartButtonArticleBox = {$plugin.tx_ptgsashop.imgAddToCartButtonArticleBox}
+    imgRemoveFromCartButtonArticleBox = {$plugin.tx_ptgsashop.imgRemoveFromCartButtonArticleBox}
+    addToCartAction = {$plugin.tx_ptgsashop.addToCartAction}
+    enableXssSecurityForArticleText = {$plugin.tx_ptgsashop.enableXssSecurityForArticleText}
+    enableRteForArticleText = {$plugin.tx_ptgsashop.enableRteForArticleText}
+       
+    articleDisplayDescription = {$plugin.tx_ptgsashop.articleDisplayDescription}
+    articleDisplayArticleno = {$plugin.tx_ptgsashop.articleDisplayArticleno}
+    articleDisplayPrice = {$plugin.tx_ptgsashop.articleDisplayPrice}
+    articleDisplayCartqty =  {$plugin.tx_ptgsashop.articleDisplayCartqty}
+    articleDisplayRemovebutton = {$plugin.tx_ptgsashop.articleDisplayRemovebutton}
+    articleDisplayMatch1 = {$plugin.tx_ptgsashop.articleDisplayMatch1}
+    articleDisplayMatch2 = {$plugin.tx_ptgsashop.articleDisplayMatch2}
+    articleDisplayDeftext = {$plugin.tx_ptgsashop.articleDisplayDeftext}
+    articleDisplayAlttext = {$plugin.tx_ptgsashop.articleDisplayAlttext}
+    articleDisplayImg = {$plugin.tx_ptgsashop.articleDisplayImg}
+    articleDisplayCartlink = {$plugin.tx_ptgsashop.articleDisplayCartlink}
+    articleDisplayBoxdefault = {$plugin.tx_ptgsashop.articleDisplayBoxdefault}
+    articleDisplayPricescales = {$plugin.tx_ptgsashop.articleDisplayPricescales}
+    articleDisplayUrl = {$plugin.tx_ptgsashop.articleDisplayUrl}
+    articleDisplayOrderbutton = {$plugin.tx_ptgsashop.articleDisplayOrderbutton}
+
+	# --------------------------------------------------------------------------
+	# Own configuration parameters ---------------------------------------------
+	# --------------------------------------------------------------------------
+    
+	templateFileArticleList = {$plugin.tx_ptgsaarticlelist_pi1.templateFileArticleList}
+    templateFilePager = {$plugin.tx_ptgsaarticlelist_pi1.templateFilePager}
+    
+    pagerDelta = {$plugin.tx_ptgsaarticlelist_pi1.pagerDelta}
+    limit = {$plugin.tx_ptgsaarticlelist_pi1.limit}
+    paging = {$plugin.tx_ptgsaarticlelist_pi1.paging}
+    getArticleCollectionHook = {$plugin.tx_ptgsaarticlelist_pi1.getArticleCollectionHook}
+    
+    imageConf < plugin.tx_ptgsashop_pi2.imageConf
+	
+	pager_stdWrap.wrap = <div class="tx_ptgsaarticlelist_pi1_pager">|</div>
+	headline_stdWrap.wrap = <h2 id="tx_ptgsaarticlelist_pi1_headline">|</h2>
+	
+	pager_typolink {
+		parameter.dataWrap = {page:uid}#tx_ptgsaarticlelist_pi1_headline
+		returnLast = url
+	}   
+	   
+}
+
+################################################################################
+## configuration for the default data provider
+################################################################################
+plugin.tx_ptgsaarticlelist_pi1.defaultDataProvider {        
+	orderBy = ARTNR   
+	searchString = 
+	andWhere = art.PASSIV = 0
+}
+
+################################################################################
+## additional language labels for the default data provider
+################################################################################
+plugin.tx_ptgsaarticlelist_pi1._LOCAL_LANG {        
+	default {
+		defaultDataProvider_headline = Article list (default data provider)
+	}
+	de {
+		defaultDataProvider_headline = Artikelliste (Standard data provider)
+	}
+}
+
+################################################################################
+## CSS styles
+################################################################################
+plugin.tx_ptgsaarticlelist_pi1._CSS_DEFAULT_STYLE (
+    
+	.tx_ptgsaarticlelist_pi1_pager {
+  		font-size: 0.9em;
+  		margin: 10px 0 10px 0;
+	}
+	
+	.tx_ptgsaarticlelist_pi1_pager span {
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.tx_ptgsaarticlelist_pi1_pager a,
+	.tx_ptgsaarticlelist_pi1_pager a:visited, 
+	.tx_ptgsaarticlelist_pi1_pager a:link,
+	.tx_ptgsaarticlelist_pi1_pager a:active {
+		padding: 2px 4px 2px 4px;
+		margin: 2px;
+   		text-decoration: none;
+		border: 1px solid blue;
+		background-color: #FFFFFF;
+   		font-weight: bold;
+   		color: blue;
+	}
+	
+	.tx_ptgsaarticlelist_pi1_pager span.pagercurrent a {
+		border: 1px solid #000;
+		background-color: blue;
+		color: #FFF;
+	}
+		    
+)

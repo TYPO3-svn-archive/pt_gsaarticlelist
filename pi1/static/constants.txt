@@ -1,0 +1,50 @@
+/* 
+possible subcategories: 
+----------------------
+enable      Used for options that enable or disable primary functions of a template
+dims        Dimensions of all kinds; pixels, widths, heights of images, frames, cells and so on.
+file        Files like background images, fonts and so on. Other options related to the file may also enter
+typo        Typography and related constants
+color       Color setup. Many colors will be found with related options in other categories though.
+links       Links: Targets typically
+language    Language specific options.
+Subcategories based on the default content elements:
+cheader,cheader_g,ctext,ctextpic,cimage,cbullets,ctable,cuploads,cmultimedia,cmailform,csearch,clogin,csplash,cmenu,cshortcut,clist,cscript,chtml
+These are all categories reserved for options that relate to content rendering for each type of tt_content element. See static_template "content (default)" and "styles.content (default)" for examples.
+
+possible data types (type=):
+---------------------------
+int [low-high]              integer, opt. in range "low" to "high"
+int+                        positive integer
+offset [L1,L2,...L6]        comma-separated integers. Default is "x,y", but as comma separated parameters in brackets you can specify up to 6 labels being comma separated! If you wish to omit one of the last 4 fields, just don't enter a label for that element.
+color                       HTML color
+wrap                        HTML-code that is wrapped around some content.
+options [item1,item2,...]   Selectbox with values/labels item1, item2 etc. Commaseparated. Split by "=" also and in that case, first part is label, second is value
+boolean [truevalue]         Boolean, opt. you can define the value of "true", def.=1
+comment                     Boolean, checked= "", not-checked = "#".
+file [ext-list/IMAGE_EXT]   Selectorbox with resources. Opt. list allowed extensions (no space in list!), eg. "[ttf]" or "[txt,html,htm]". You can also enter "[IMAGE_EXT]" in which case the default image-extensions are listed. (used for datatype "imgResouce")
+string (the default)        Just a string value
+*/ 
+
+
+plugin.tx_ptgsaarticlelist_pi1 {
+    
+    # cat=pt_gsaarticlelist::general/010; type=string; label=Smarty template
+    templateFileArticleList = EXT:pt_gsaarticlelist/res/smarty_tpl/articlelist.tpl
+    
+    # cat=pt_gsaarticlelist::general/020; type=string; label=Smarty template for pager
+    templateFilePager = EXT:pt_gsaarticlelist/res/smarty_tpl/pager.tpl
+    
+    # cat=pt_gsaarticlelist::general/030; type=int; label=Pager Delta: Number of pages that are displayed right and left from the current page in the pagebrowser.
+    pagerDelta = 1
+    
+    # cat=pt_gsaarticlelist::general/040; type=int; label=Limit: Max amount of articles to be displayed in the list.
+    limit = 0
+    
+    # cat=pt_gsaarticlelist::general/050; type=int; label=Paging: Amount of articles to be displayed on one page.
+    paging = 5
+    
+    # cat=pt_gsaarticlelist::general/060; type=string; label=Data Provider: Path to the PHP class that provides the data for the article list.
+    getArticleCollectionHook = EXT:pt_gsaarticlelist/res/class.tx_ptgsaarticlelist_defaultDataProvider.php:tx_ptgsaarticlelist_defaultDataProvider
+       
+}

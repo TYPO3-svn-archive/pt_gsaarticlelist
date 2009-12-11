@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_ptgsaarticlelist_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="artNo">Art. No.</label>
+			<label index="price">Price</label>
+			<label index="add_to_cart">Add to shopping cart</label>
+			<label index="remove_from_cart">Remove article from shopping cart</label>
+			<label index="view_cart">View cart</label>
+			<label index="qty_cart">Current quantity of this article in your shopping cart</label>
+			<label index="artfixedcost_info">one-time fixed cost independently of the article quantity.</label>
+			<label index="quantity">Quantity</label>
+
+			<label index="prev">&#171;</label>
+			<label index="next">&#187;</label>
+			<label index="fill">  ...  </label>
+
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="artNo">Art.-Nr.</label>
+			<label index="price">Preis</label>
+			<label index="add_to_cart">In den Warenkorb legen</label>
+			<label index="remove_from_cart">Artikel aus dem Warenkorb löschen</label>
+			<label index="view_cart">Zum Warenkorb</label>
+			<label index="qty_cart">derzeitige Anzahl dieses Artikels in Ihrem Warenkorb</label>
+			<label index="artfixedcost_info">einmalige Fixkosten unabhängig von der bestellten Artikelanzahl</label>
+			<label index="quantity">Menge</label>
+
+			<label index="prev">&#171;</label>
+			<label index="next">&#187;</label>
+			<label index="fill">  ...  </label>
+
+		</languageKey>
+	</data>
+</T3locallang>

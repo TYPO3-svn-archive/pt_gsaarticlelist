@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for plugin &quot;tx_ptgsaarticlelist_pi1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="sListsetting">List Settings</label>
+			<label index="limit">Limit</label>
+			<label index="paging">Paging</label>
+			<label index="pagerDelta">Pager delta</label>
+			<label index="getArticleCollectionHook">Data Provider</label>
+			<label index="defaultDataProvider">Default Data Provider</label>
+			<label index="templateFileArticleList">Template "article list"</label>
+			<label index="templateFilePager">Template "pager"</label>
+		</languageKey>
+	</data>
+</T3locallang>
